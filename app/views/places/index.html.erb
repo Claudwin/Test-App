@@ -1,9 +1,13 @@
-<% @places.each do |place| %>
-    <div>
-        <h1><%= place.name %></h1>
-        <h1><%= place.address %></h1>
-        <h1><%= place.description %></h1>
-    </div>
-
-    <hr />
-<% end %>
+<div class="container">
+    <% @places.in_groups_of(4, false).each do |group| %>
+        <div class='row'>
+            <% @places.each do |place| %>
+                <div class='col-md-3'>
+                <h1><%= place.name %></h1>
+                    <i><%= place.address %></i><br /><br />
+                    <h1><%= place.description %></h1>
+                </div>
+            <% end %>
+        </div>
+    <% end%>
+</div>
